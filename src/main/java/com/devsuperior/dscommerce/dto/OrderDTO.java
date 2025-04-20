@@ -56,4 +56,12 @@ public class OrderDTO {
     public List<OrdemItemDTO> getItems() {
         return items;
     }
+
+    public Double getTotal() {
+        double sum = 0.0;
+        for(OrdemItemDTO ordemItemDTO : items) {
+            sum += ordemItemDTO.getSubTotal();
+        }
+        return sum;
+    }
 }
