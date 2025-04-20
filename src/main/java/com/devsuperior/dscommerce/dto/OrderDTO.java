@@ -1,6 +1,7 @@
 package com.devsuperior.dscommerce.dto;
 
 import com.devsuperior.dscommerce.entities.Order;
+import com.devsuperior.dscommerce.entities.OrderItem;
 import com.devsuperior.dscommerce.entities.OrderStatus;
 
 import java.time.Instant;
@@ -31,6 +32,10 @@ public class OrderDTO {
         status = entity.getStatus();
         client = new ClientDTO(entity.getClient());
         payment = (entity.getPayment() == null) ? null : new PaymentDTO(entity.getPayment());
+        for(OrderItem item : entity.getItems()) {
+            OrdemItemDTO itemDTO = new OrdemItemDTO(item);
+            items.add(itemDTO);
+        }
     }
 
     public Long getId() {
