@@ -38,4 +38,8 @@ public class OrdemItemDTO {
     public Integer getQuantity() {
         return quantity;
     }
+
+    public Double getSubTotal() {
+        return price * quantity;
+    }
 }
