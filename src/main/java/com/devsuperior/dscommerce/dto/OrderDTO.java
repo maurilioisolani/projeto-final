@@ -18,7 +18,7 @@ public class OrderDTO {
     private ClientDTO client;
     private PaymentDTO payment;
     @NotEmpty(message = "Deve ter pelo menos um item")
-    private List<Ord .emItemDTO> items = new ArrayList<>();
+    private List<OrdemItemDTO> items = new ArrayList<>();
 
     public OrderDTO(Long id, Instant moment, OrderStatus status, ClientDTO client, PaymentDTO payment) {
         this.id = id;
