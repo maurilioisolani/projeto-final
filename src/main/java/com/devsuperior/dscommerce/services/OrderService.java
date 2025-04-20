@@ -40,7 +40,6 @@ public class OrderService {
         return new OrderDTO(order);
     }
 
-    @Transactional(readOnly = true)
     public OrderDTO insert(OrderDTO dto) {
         Order order = new Order();
         order.setMoment(Instant.now());
